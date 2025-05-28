@@ -12,17 +12,21 @@ public class Copo {
     void status(){
         System.out.println("Um copo de cor: " + this.cor);
         System.out.println("Modelo: " + this.modelo);
-        System.out.println("Capacidade: " + this.volumeMaximo + " ml");
+        System.out.println("Capacidade Máxima: " + this.volumeMaximo + " ml");
+        System.out.println("Capacidade atual: " + this.volumeAtual + " ml");
         System.out.println("O copo está cheio? " + (this.cheio ? "Sim" : "Não"));
         System.out.println("O copo está sujo? " + (this.sujo ? "Sim" : "Não"));
     }
 
     void beber(){
-        if(this.cheio == true){
+        if(this.volumeAtual > 0 && volumeAtual <= volumeMaximo){
             System.out.println("Posso beber do copo.");
         }
-        else {
+        else if (this.volumeAtual <= 0) {
             System.out.println("Não posso beber, o copo está vazio.");
+        }
+        else{
+            System.out.println("Não posso beber, o copo está transbordando.");
         }
     }
     void encher(){
